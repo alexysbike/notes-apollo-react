@@ -1,0 +1,28 @@
+{
+  "name": "notes-apollo-server",
+  "version": "1.0.0",
+  "description": "Server for node apollo",
+  "main": "app.js",
+  "scripts": {
+    "start": "node app.js",
+    "mock": "node mock.js"
+  },
+  "keywords": [
+    "node",
+    "apollo"
+  ],
+  "author": "Alexys Gonzalez (DK)",
+  "license": "ISC",
+  "dependencies": {
+    "apollo-server": "^2.2.5",
+    "dotenv": "^6.1.0",
+    "eslint": "^5.9.0",
+    "eslint-plugin-prettier": "^3.0.0",
+    "graphql": "^14.0.2",
+    "mongoose": "^5.3.14",
+    "prettier": "^1.15.3"
+  },
+  "devDependencies": {
+    "faker": "^4.1.0"
+  }
+}
