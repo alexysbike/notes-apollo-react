@@ -41,5 +41,6 @@ module.exports = gql`
     removeLabel(id: String!): Response!
     createNote(note: NoteInput): Note!
     updateNote(id: String, note: NoteInput, overwrite: Boolean = false): Note!
+    removeNote(id: String!): Response!
   }
 `;
