@@ -13,3 +13,9 @@ export const GET_NOTES = gql`
     }
   }
 `;
+
+export const GET_NOTE_SEARCH = gql`
+  query SearchNote {
+    searchNote @client
+  }
+`;

@@ -1,4 +1,6 @@
 import React from 'react';
+import { Query, ApolloConsumer } from 'react-apollo';
+import { GET_NOTE_SEARCH } from '../queries/notes';
 
 const Navbar = () => (
   <header className="navbar">
@@ -7,7 +9,17 @@ const Navbar = () => (
     </section>
     <section className="navbar-section">
       <div className="input-group input-line">
-        <input type="text" className="form-input" placeholder="Search note" />
+        <Query query={GET_NOTE_SEARCH}>
+          {({ data: { searchNote }, client }) => (
+            <input
+              type="text"
+              className="form-input"
+              placeholder="Search note"
+              value={searchNote}
+              onChange={({ target: { value } }) => client.writeData({ data: { searchNote: value }})}
+            />
+          )}
+        </Query>
       </div>
     </section>
   </header>
