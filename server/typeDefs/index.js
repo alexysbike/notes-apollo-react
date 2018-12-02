@@ -7,7 +7,7 @@ module.exports = gql`
   }
 
   type Note {
-    _id: String!
+    _id: ID!
     title: String!
     content: String!
     labelIds: [String!]!
