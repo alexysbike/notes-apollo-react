@@ -5,6 +5,13 @@ module.exports = gql`
     _id: ID!
     name: String!
   }
+  
+  type LabelConnection {
+    docs: [Label!]!
+    total: Int!
+    limit: Int!
+    offset: Int!
+  }
 
   type Note {
     _id: ID!
@@ -13,10 +20,17 @@ module.exports = gql`
     labelIds: [String!]!
     labels: [Label!]!
   }
+  
+  type NoteConnection {
+    docs: [Note!]!
+    total: Int!
+    limit: Int!
+    offset: Int!
+  }
 
   type Query {
-    labels(filter: String): [Label]
-    notes(filter: String): [Note]
+    labels(filter: String, offset: Int = 0, limit: Int = 10): LabelConnection!
+    notes(filter: String, offset: Int = 0, limit: Int = 10): NoteConnection!
     label(id: String!): Label
     note(id: String!): Note
   }

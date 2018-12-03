@@ -1,6 +1,10 @@
 require('dotenv').config();
 const {ApolloServer} = require('apollo-server');
 const mongoose = require('mongoose');
+const mongoosePaginate = require('mongoose-paginate');
+// Adding pagination plugin
+mongoosePaginate.paginate.options = {lean: true, limit: 10};
+mongoose.plugin(mongoosePaginate);
 require('./models');
 const typeDefs = require('./typeDefs');
 const resolvers = require('./resolvers');

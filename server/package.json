@@ -20,6 +20,7 @@
     "eslint-plugin-prettier": "^3.0.0",
     "graphql": "^14.0.2",
     "mongoose": "^5.3.14",
+    "mongoose-paginate": "^5.0.3",
     "prettier": "^1.15.3"
   },
   "devDependencies": {

@@ -13,9 +13,9 @@ const filterParser = filter => {
 
 module.exports = {
   Query: {
-    labels: (parent, {filter}) => Label.find(filterParser(filter)),
+    labels: (parent, {filter, limit, offset}) => Label.paginate(filterParser(filter), {limit, offset}),
     label: (parent, {id: _id}) => Label.findOne({_id}),
-    notes: (parent, {filter}) => Note.find(filterParser(filter)),
+    notes: (parent, {filter, limit, offset}) => Note.paginate(filterParser(filter), {limit, offset}),
     note: (parent, {id: _id}) => Note.findOne({_id})
   },
   Note: {

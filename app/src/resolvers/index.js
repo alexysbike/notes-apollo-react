@@ -11,3 +11,7 @@ export const typeDefs = gql`
     searchNote: String
   }
 `;
+
+export const resolvers = {
+
+};

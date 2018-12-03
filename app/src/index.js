@@ -6,13 +6,14 @@ import 'spectre.css/src/spectre.scss';
 import App from './App';
 import * as serviceWorker from './serviceWorker';
 import './index.css';
-import { defaults, typeDefs } from './resolvers';
+import { defaults, typeDefs, resolvers } from './resolvers';
 
 const client = new ApolloClient({
   uri: process.env.REACT_APP_APOLLO_URI,
   clientState: {
     defaults,
-    typeDefs
+    typeDefs,
+    resolvers
   },
 });
 
