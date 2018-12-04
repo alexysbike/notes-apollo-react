@@ -14,11 +14,23 @@ export const GET_NOTES = gql`
       }
       total
     }
+    searchNote @client
   }
 `;
 
 export const GET_NOTE_SEARCH = gql`
   query SearchNote {
     searchNote @client
+  }
+`;
+
+export const GET_NOTE = gql`
+  query GetNote($id: ID!){
+    note(id: $id) {
+      _id
+      title
+      content
+      labelIds
+    }
   }
 `;

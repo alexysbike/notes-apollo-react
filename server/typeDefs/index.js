@@ -31,8 +31,8 @@ module.exports = gql`
   type Query {
     labels(filter: String, offset: Int = 0, limit: Int = 10): LabelConnection!
     notes(filter: String, offset: Int = 0, limit: Int = 10): NoteConnection!
-    label(id: String!): Label
-    note(id: String!): Note
+    label(id: ID!): Label
+    note(id: ID!): Note
   }
 
   input LabelInput {
