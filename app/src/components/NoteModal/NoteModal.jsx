@@ -15,7 +15,7 @@ const NoteModal = ({ id }) => (
           Error...
         </div>
       );
-      const { title } = data ? data.note : { title: '' };
+      const { title, content } = data && data.note ? data.note : { title: '', content: '' };
       return (
         <div className="modal active" id="modal-id">
           <a href="#close" className="modal-overlay" aria-label="Close" />
@@ -26,7 +26,14 @@ const NoteModal = ({ id }) => (
             </div>
             <div className="modal-body">
               <div className="content">
-                <h1>{title}</h1>
+                <div className="form-group">
+                  <label htmlFor="form-title" className="form-label">Title</label>
+                  <input type="text" className="form-input" id="form-title" name="title" value={title} />
+                </div>
+                <div className="form-group">
+                  <label htmlFor="form-content" className="form-label">Content</label>
+                  <input type="text" className="form-input" id="form-content" name="content" value={content} />
+                </div>
               </div>
             </div>
             <div className="modal-footer">

@@ -1,5 +1,5 @@
 import React from 'react';
-import { Query, ApolloConsumer } from 'react-apollo';
+import { Query } from 'react-apollo';
 import { GET_NOTE_SEARCH } from '../queries/notes';
 
 const Navbar = () => (

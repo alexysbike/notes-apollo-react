@@ -6,7 +6,7 @@ import { GET_NOTES } from '../../queries/notes';
 
 const NoteList = () => (
   <div className="columns">
-    <NoteModal id="5c059abe857d6b3dd893c901" />
+    <NoteModal />
     <Query query={GET_NOTES}>
       {({ loading, error, data, fetchMore }) => {
         if (loading) return (
@@ -19,8 +19,6 @@ const NoteList = () => (
             Error...
           </div>
         );
-        console.log('pongo aqui', data.notes.docs);
-        console.log('pongo aqui 2', data.notes.total);
         const { searchNote } = data;
         const { docs, total } = data.notes;
         if (total > docs.length) {
